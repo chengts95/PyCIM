@@ -22,19 +22,24 @@ from CIM15.IEC61970.Core.PowerSystemResource import PowerSystemResource
 
 class EnergyConsumerPhase(PowerSystemResource):
 
-    def __init__(self, EnergyConsumer=None, *args, **kw_args):
+    def __init__(self, phase=None, EnergyConsumer=None, pfixed=0.0, qfixed=0.0, *args, **kw_args):
         """Initialises a new 'EnergyConsumerPhase' instance.
 
+        @param phase:
         @param EnergyConsumer:
         """
+        self.phase = phase
         self._EnergyConsumer = None
         self.EnergyConsumer = EnergyConsumer
 
+        self.pfixed = pfixed
+        self.qfixed = qfixed
+
         super(EnergyConsumerPhase, self).__init__(*args, **kw_args)
 
-    _attrs = []
-    _attr_types = {}
-    _defaults = {}
+    _attrs = ["pfixed", "qfixed"]
+    _attr_types = {"pfixed": float, "qfixed": float}
+    _defaults = {"pfixed": 0.0, "qfixed": 0.0}
     _enums = {}
     _refs = ["EnergyConsumer"]
     _many_refs = []
@@ -54,4 +59,3 @@ class EnergyConsumerPhase(PowerSystemResource):
                 self._EnergyConsumer._EnergyConsumerPhases.append(self)
 
     EnergyConsumer = property(getEnergyConsumer, setEnergyConsumer)
-

@@ -1,8 +1,25 @@
 language: python
 python:
+    - "2.6"
     - "2.7"
+    - "3.4"
+    - "3.5"
+    - "3.6"
 install:
-    - "pip install -e ."
-    - "pip install pytest"
-script: 
-    - "pytest PyCIM/Test/*Test.py"
+    - "pip install -e .[dev,build]"
+    - pip install codecov pytest-cov
+script:
+    - pytest --cov=PyCIM
+after_success:
+    - codecov
+deploy:
+  provider: pypi
+  user: osirius
+  password:
+    secure: U8GuICdcomZmj66lp9fIccBGJbYhU7VXgYSAlqozQn/e6+nQD2rXi0LfyAxx+kegH3d1S0h7bUVuwOIRtvpdMY0QzEpvPZ7YmvC6g5o1u66t0JDnWEBWuUcYRdIlu914vn7c+OEQoCZmA4fQABqlw3PfA9aqLaedOzAXiew8zSI=
+  distributions: "sdist bdist_wheel"
+  on:
+    tags: true
+    repo: rwl/PyCIM
+    branch: master
+    python: "2.7"

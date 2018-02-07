@@ -1,5 +1,19 @@
-.. image:: https://travis-ci.org/rwl/PyCIM.svg?branch=master
-    :target: https://travis-ci.org/rwl/PyCIM
+|travis| |pythons| |wheel|
+
+**Development Status**
+
+PyCIM has proven to be more popular than first anticipated.
+However, it has not received the support and updates it requires. Should
+improvements such as:
+
+- CIM 16/CGMES support,
+- Difference models or
+- Topological processing
+
+be required then the `original author <https://github.com/rwl>`_
+may be available on contract. Please do not hesitate to get in
+`contact <mailto:r.w.lincoln@gmail.com>`_ directly.
+
 ============
 Introduction
 ============
@@ -22,7 +36,7 @@ Current features include:
 Installation
 ------------
 
-PyCIM has no dependencies beyond Python_ 2.5 or later. It can be easy_installed
+PyCIM has no dependencies beyond Python_ 2.6 or later. It can be easy_installed
 using setuptools_::
 
   $ easy_install PyCIM
@@ -98,3 +112,11 @@ PyCIM is developed by Richard Lincoln (r.w.lincoln@gmail.com).
 .. _iPython: http://ipython.scipy.org
 .. _`website`: http://www.pycim.com/
 .. _`API documentation`: http://packages.python.org/PyCIM
+
+.. more shields at http://shields.io
+.. |travis| image:: https://travis-ci.org/rwl/PyCIM.svg?branch=master
+    :target: https://travis-ci.org/rwl/PyCIM
+.. |pythons| image:: https://img.shields.io/pypi/pyversions/PyCIM.svg
+    :target: https://pypi.python.org/pypi/PyCIM
+.. |wheel| image:: https://img.shields.io/pypi/format/PyCIM.svg
+    :target: https://pypi.python.org/pypi/PyCIM
